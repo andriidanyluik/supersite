@@ -18,6 +18,13 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
+    def display_kategoriya(self):
+        """
+        Creates a string for the Genre. This is required to display genre in Admin.
+        """
+        return ', '.join([ kategoriya.name for kategoriya in self.kategoriya.all()[:3] ])
+    display_kategoriya.short_description = "Категорія"
+
 class Kategoriya(models.Model):
     """
     Model representing a book genre (e.g. Science Fiction, Non Fiction).
