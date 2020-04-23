@@ -1,0 +1,39 @@
+{% load static %}
+<html>
+    <head>
+         <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <title>SYSadmin</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    </head>
+<body>
+    <div class="page-header">
+        <h1><a href="/">SYSadmin</a></h1>
+    </div>
+    <div class="content container">
+    <div class="col-sm-2">
+      {% block sidebar %}
+      <ul class="sidebar-nav">
+          <li><a href="/"><h3>Головна</h3></a></li>
+          <li><a href=""><h3>Адміністрування</h3></a></li>
+          <li><a href=""><h3>Програмування</h3></a></li>
+          <li><a href=""><h3>Реєстрація</h3></a></li>
+          <li><a href=""><h3>Контакти</h3></a></li>
+      </ul>
+     {% endblock %}
+      </div>
+    
+        <div class="row">
+            <div class="col-md-8">
+            {% block content %}
+            {% endblock %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
